@@ -49,6 +49,8 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.gbxSummary = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.lblSizeResult = new System.Windows.Forms.Label();
             this.lblSize = new System.Windows.Forms.Label();
             this.lblTotalPriseResult = new System.Windows.Forms.Label();
@@ -67,6 +69,7 @@
             this.gbxRbWhereToEat.SuspendLayout();
             this.gbxToppings.SuspendLayout();
             this.gbxSummary.SuspendLayout();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.numericUpDown1 ) ).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -88,9 +91,9 @@
             this.gbxRbSize.Controls.Add( this.rbSmall );
             this.gbxRbSize.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.gbxRbSize.Font = new System.Drawing.Font( "Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( ( byte ) ( 0 ) ) );
-            this.gbxRbSize.Location = new System.Drawing.Point( 35, 100 );
+            this.gbxRbSize.Location = new System.Drawing.Point( 12, 100 );
             this.gbxRbSize.Name = "gbxRbSize";
-            this.gbxRbSize.Size = new System.Drawing.Size( 232, 165 );
+            this.gbxRbSize.Size = new System.Drawing.Size( 255, 165 );
             this.gbxRbSize.TabIndex = 1;
             this.gbxRbSize.TabStop = false;
             this.gbxRbSize.Text = "Size";
@@ -139,9 +142,9 @@
             this.gbxRbCrustType.Controls.Add( this.rbThin );
             this.gbxRbCrustType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.gbxRbCrustType.Font = new System.Drawing.Font( "Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( ( byte ) ( 0 ) ) );
-            this.gbxRbCrustType.Location = new System.Drawing.Point( 35, 294 );
+            this.gbxRbCrustType.Location = new System.Drawing.Point( 12, 294 );
             this.gbxRbCrustType.Name = "gbxRbCrustType";
-            this.gbxRbCrustType.Size = new System.Drawing.Size( 232, 169 );
+            this.gbxRbCrustType.Size = new System.Drawing.Size( 255, 169 );
             this.gbxRbCrustType.TabIndex = 2;
             this.gbxRbCrustType.TabStop = false;
             this.gbxRbCrustType.Text = "Crust Type";
@@ -300,6 +303,8 @@
             // 
             // gbxSummary
             // 
+            this.gbxSummary.Controls.Add( this.numericUpDown1 );
+            this.gbxSummary.Controls.Add( this.lblQuantity );
             this.gbxSummary.Controls.Add( this.lblSizeResult );
             this.gbxSummary.Controls.Add( this.lblSize );
             this.gbxSummary.Controls.Add( this.lblTotalPriseResult );
@@ -315,10 +320,27 @@
             this.gbxSummary.Location = new System.Drawing.Point( 848, 100 );
             this.gbxSummary.Name = "gbxSummary";
             this.gbxSummary.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gbxSummary.Size = new System.Drawing.Size( 246, 500 );
+            this.gbxSummary.Size = new System.Drawing.Size( 423, 500 );
             this.gbxSummary.TabIndex = 2;
             this.gbxSummary.TabStop = false;
             this.gbxSummary.Text = "Order Summary";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point( 284, 395 );
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size( 120, 24 );
+            this.numericUpDown1.TabIndex = 18;
+            this.numericUpDown1.ValueChanged += new System.EventHandler( this.numericUpDown1_ValueChanged );
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point( 207, 401 );
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size( 61, 16 );
+            this.lblQuantity.TabIndex = 17;
+            this.lblQuantity.Text = "Quantity";
             // 
             // lblSizeResult
             // 
@@ -344,7 +366,7 @@
             this.lblTotalPriseResult.AutoSize = true;
             this.lblTotalPriseResult.Font = new System.Drawing.Font( "Rockwell Nova", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ( ( byte ) ( 0 ) ) );
             this.lblTotalPriseResult.ForeColor = System.Drawing.Color.FromArgb( ( ( int ) ( ( ( byte ) ( 0 ) ) ) ), ( ( int ) ( ( ( byte ) ( 192 ) ) ) ), ( ( int ) ( ( ( byte ) ( 0 ) ) ) ) );
-            this.lblTotalPriseResult.Location = new System.Drawing.Point( 43, 441 );
+            this.lblTotalPriseResult.Location = new System.Drawing.Point( 92, 441 );
             this.lblTotalPriseResult.Name = "lblTotalPriseResult";
             this.lblTotalPriseResult.Size = new System.Drawing.Size( 85, 42 );
             this.lblTotalPriseResult.TabIndex = 14;
@@ -455,7 +477,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size( 1128, 631 );
+            this.ClientSize = new System.Drawing.Size( 1283, 631 );
             this.Controls.Add( this.btnReset );
             this.Controls.Add( this.btnOrder );
             this.Controls.Add( this.gbxSummary );
@@ -477,6 +499,7 @@
             this.gbxToppings.PerformLayout();
             this.gbxSummary.ResumeLayout( false );
             this.gbxSummary.PerformLayout();
+            ( ( System.ComponentModel.ISupportInitialize ) ( this.numericUpDown1 ) ).EndInit();
             this.ResumeLayout( false );
             this.PerformLayout();
 
@@ -517,6 +540,8 @@
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblSizeResult;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label lblQuantity;
     }
 }
 

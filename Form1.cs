@@ -126,9 +126,10 @@ namespace Pizza
         {
             return selectedSizePris() + selectedCrustPrise() + selectedToppingsPrise();
         }
-        void updatePrise()
+        float updatePrise()
         {
-            lblTotalPriseResult.Text = " $ " + calculatePrise().ToString();
+            lblTotalPriseResult.Text = calculatePrise().ToString() + " $ ";
+            return calculatePrise();
         }
         void ResetForm()
         {
@@ -164,26 +165,31 @@ namespace Pizza
         {
 
             changeSizeLabel();
+            numericUpDown1.Value = 0;
         }
 
         private void rbMedium_CheckedChanged( object sender, System.EventArgs e )
         {
             changeSizeLabel();
+            numericUpDown1.Value = 0;
         }
 
         private void rbLarge_CheckedChanged( object sender, System.EventArgs e )
         {
             changeSizeLabel();
+            numericUpDown1.Value = 0;
         }
 
         private void rbThin_CheckedChanged( object sender, System.EventArgs e )
         {
             changeCrust();
+            numericUpDown1.Value = 0;
         }
 
         private void rbThik_CheckedChanged( object sender, System.EventArgs e )
         {
             changeCrust();
+            numericUpDown1.Value = 0;
         }
 
         private void rbOutOrder_CheckedChanged( object sender, System.EventArgs e )
@@ -199,31 +205,37 @@ namespace Pizza
         private void checkBox1_CheckedChanged( object sender, EventArgs e )
         {
             updateToppings();
+            numericUpDown1.Value = 0;
         }
 
         private void checkBox2_CheckedChanged( object sender, EventArgs e )
         {
             updateToppings();
+            numericUpDown1.Value = 0;
         }
 
         private void checkBox3_CheckedChanged( object sender, EventArgs e )
         {
             updateToppings();
+            numericUpDown1.Value = 0;
         }
 
         private void checkBox4_CheckedChanged( object sender, EventArgs e )
         {
             updateToppings();
+            numericUpDown1.Value = 0;
         }
 
         private void checkBox5_CheckedChanged( object sender, EventArgs e )
         {
             updateToppings();
+            numericUpDown1.Value = 0;
         }
 
         private void checkBox6_CheckedChanged( object sender, EventArgs e )
         {
             updateToppings();
+            numericUpDown1.Value = 0;
         }
 
         private void btnOrder_Click( object sender, EventArgs e )
@@ -251,6 +263,15 @@ namespace Pizza
             changeSizeLabel();
             updatePrise();
             updateToppings();
+        }
+
+        private void numericUpDown1_ValueChanged( object sender, EventArgs e )
+        {
+            if ( numericUpDown1.Value > 0 )
+            {
+                // decimal price = Convert.ToDecimal( updatePrise() );
+                lblTotalPriseResult.Text = ( Convert.ToDecimal( updatePrise() ) * numericUpDown1.Value ).ToString() + " $ ";
+            }
         }
     }
 }
